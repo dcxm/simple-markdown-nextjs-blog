@@ -9,7 +9,7 @@ export default function PostBox({ post, date }) {
             </div>
             {post.data.thumbnail &&
                 <div className="post-box-thumbnail" >
-                    <img src={`./${post.data.thumbnail}`} />
+                    <img src={`/${post.data.thumbnail}`} />
                 </div>}
             <p className="post-box-excerpt">{post.data.description}</p>
         </>

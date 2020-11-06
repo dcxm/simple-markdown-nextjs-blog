@@ -6,7 +6,7 @@
 }
 
 .flex-container .post-box-container{
-    @include media.mediaQuery(variables.breakpoint("desktop-small")) {
+    @include media.mediaQuery(variables.breakpoint("tablet")) {
         padding: 0 1em;
         &:nth-child(odd) {
             padding-left: 0;

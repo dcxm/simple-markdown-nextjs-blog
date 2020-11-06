@@ -30,8 +30,12 @@ h6 {
     margin: 1em 0 0.7em 0;
 }
 
+h1 {
+    font-size: 2.5em;
+}
+
 h2 {
-    font-size: 1.7em;
+    font-size: 2em;
 }
 
 header {
@@ -48,6 +52,7 @@ main {
 }
 
 .site-title {
+    font-size: 1.7em;
     color: white;
     margin: 0;
 }
@@ -66,7 +71,7 @@ main {
     color: white;
     background-color: variables.color("secondary");
     padding: 0.4em 0.8em;
-    margin-right: .5em;
+    margin-right: 0.5em;
     margin-bottom: 0.7em;
     border-radius: 0.5em;
     &:last-child {
@@ -102,6 +107,11 @@ main {
     }
 }
 
+.featured-posts-title {
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
 .flex-container {
     display: flex;
     width: 100%;
@@ -124,7 +134,7 @@ main {
         }
     }
     .col-md-#{$i} {
-        @media (min-width: #{variables.breakpoint("desktop-small")}) {
+        @media (min-width: #{variables.breakpoint("tablet")}) {
             width: calc(100% / 12 * #{$i});
         }
     }
