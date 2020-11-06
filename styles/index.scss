@@ -6,6 +6,7 @@
 @import "./post-box";
 @import "./button";
 @import "./post-content";
+@import "./input";
 
 body {
     margin: 0;
@@ -36,11 +37,6 @@ h1 {
 
 h2 {
     font-size: 2em;
-}
-
-header {
-    background-color: variables.color("primary");
-    padding: 1em 0;
 }
 
 a {
@@ -138,4 +134,40 @@ main {
             width: calc(100% / 12 * #{$i});
         }
     }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: variables.color("primary");
+    height: 60px;
+    nav {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+header nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+header nav a {
+    display: block;
+}
+
+header nav button {
+    display: flex;
+    align-items: center;
+    padding: .7em 1em;
+}
+
+.search-icon {
+    display: inline-block;
+    z-index: 1000;
+    height: 1.5em;
+    margin-left: .5em;
 }

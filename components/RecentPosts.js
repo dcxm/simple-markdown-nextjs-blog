@@ -7,7 +7,7 @@ export default function RecentPosts({ posts, numberOfPosts }) {
             <h2>Recent posts</h2>
             <div className="flex-container post-items">
                 {posts.slice(0, numberOfPosts ? numberOfPosts : 3).map(post =>
-                    <Link href={`/posts/${post.data.slug}`}><a className="col-4 col-s-12 post-item">
+                    <Link href={`/posts/${post.data.slug}`} key={post.data.title}><a className="col-4 col-s-12 post-item">
                         <div key={post.data.title}>
                             <PostBox post={post} />
                         </div>

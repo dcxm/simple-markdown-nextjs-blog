@@ -1,0 +1,33 @@
+@use "./variables";
+@use "./mixins/media";
+
+input {
+    font-size: 1em;
+    padding: 1em;
+    border: 2px solid #{variables.color("secondary")};
+    border-radius: 0.5em;
+    outline: none;
+    transition: all 0.15s;
+    &:focus {
+        background-color: rgb(233, 233, 233);
+    }
+}
+
+.search-input-container {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    @include media.mediaQuery(variables.breakpoint("tablet"), max-width) {
+        flex-direction: column;
+    }
+}
+
+.search-input {
+    display: block;
+    width: 80%;
+    margin-right: 1em;
+    @include media.mediaQuery(variables.breakpoint("tablet"), max-width) {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+}

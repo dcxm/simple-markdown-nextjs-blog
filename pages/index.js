@@ -27,7 +27,7 @@ export default function Home({ categories, posts }) {
         <h2>Categories</h2>
         <div>
           {categories.map(category =>
-            <Link href={`/posts/categories/${category.slug}`}><a className="category-link">
+            <Link href={`/posts/categories/${category.slug}`} key={category.slug}><a className="category-link">
               <span key={category.name}>
                 {category.name}
               </span>
