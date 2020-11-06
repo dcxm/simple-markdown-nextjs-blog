@@ -7,7 +7,7 @@ export default function Category({ posts, categoryName }) {
     return (
         <>
             <h1>{categoryName}</h1>
-            <PostList posts={posts} />
+            <PostList posts={posts} date/>
         </>
     )
 }
