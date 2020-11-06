@@ -10,14 +10,20 @@ export default function Search() {
 
     const handleSearch = () => {
         if (searchValue.length > 0) {
-            fetch(`/api/search?q=${searchValue}`)
+            fetch(`/api/search?q=${searchValue}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: 'same-origin'
+            })
                 .then(res => res.json())
                 .then(res => {
                     if (res.msg) {
                         setResMessage(res.msg)
                         setPosts([])
                     } else setPosts(res)
-                })
+                }).catch(err => console.log('object', err))
         } else setError('Please fill the search form')
     }
 
