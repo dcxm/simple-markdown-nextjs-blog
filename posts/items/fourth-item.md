@@ -1,12 +1,12 @@
 ---
-title: My first item!
+title: My fourth item!
 slug: fourth-incredible-item
 featured: true
 date: 2020.05.05. 17:45:00
 description: This is my fourth real post!
 thumbnail: two.jpg
 ---
-# My first item!
+# My fourth item!
 
 ![A person in the woods](/three.jpg)
 
