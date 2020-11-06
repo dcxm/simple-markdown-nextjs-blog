@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Development",
+        "items": ["first-item.md"],
+        "featured": true
+    },
+    {
+        "name": "Hobby",
+        "items": ["second-item.md"]
+    },
+    {
+        "name": "Design",
+        "items": ["second-item.md"],
+        "featured": true
+    },
+    {
+        "name": "Yes",
+        "items": ["first-item.md"]
+    },
+    {
+        "name": "Drawing",
+        "items": ["second-item.md"]
+    },
+    {
+        "name": "Music",
+        "items": ["second-item.md"]
+    }
+]

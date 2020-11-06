@@ -1,0 +1,58 @@
+@use "./variables";
+@use "./mixins/media";
+
+.post-box-container {
+    margin: 1.5em 0;
+}
+
+.flex-container .post-box-container{
+    @include media.mediaQuery(variables.breakpoint("desktop-small")) {
+        padding: 0 1em;
+        &:nth-child(odd) {
+            padding-left: 0;
+        }
+        &:nth-child(even) {
+            padding-right: 0;
+        }
+
+    }
+}
+
+.post-box-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .7em;
+    .post-box-title {
+        color: variables.color("secondary");
+        font-size: 1.35em;
+        margin: 0;
+        @include media.mediaQuery(variables.breakpoint("mobile"), max-width) {
+            margin-bottom: .2em;
+        }
+    }
+    .post-box-date {
+        font-weight: bold;
+        color: gray;
+    }
+    @include media.mediaQuery(variables.breakpoint("mobile"), max-width) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 1em;
+    }
+}
+
+.post-box-thumbnail {
+    width: 100%;
+    margin: 0 0 1em 0;
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+}
+
+.post-box-excerpt {
+    font-size: 1.15em;
+    font-weight: bold;
+}

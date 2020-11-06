@@ -1,0 +1,28 @@
+@use "sass:map";
+
+$breakpoints: (
+    "mobile": 550px,
+    "tablet": 768px,
+    "desktop-small": 1136px,
+    "desktop-medium": 1660px,
+    "desktop-large": 1920px,
+    "desktop-huge": 2560px
+);
+
+$colors: (
+    "primary": #00beab,
+    "secondary": #007ec7,
+    "accent": #8d00b8
+);
+
+@function get-map($map, $name) {
+    @return map.get($map, $name)
+};
+
+@function color ($name) {
+    @return get-map($colors, $name)
+};
+
+@function breakpoint ($name) {
+    @return get-map($breakpoints, $name)
+};

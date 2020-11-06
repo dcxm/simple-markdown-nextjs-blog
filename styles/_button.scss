@@ -1,0 +1,35 @@
+@use "./variables";
+
+.button {
+    padding: 1em 1.2em;
+    border: none;
+    border-radius: 0.7em;
+    background-color: variables.color("primary");
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s;
+    &:hover {
+        background-color: scale-color(variables.color("primary"), $lightness: -25%);
+    }
+}
+
+button {
+    @extend .button;
+}
+
+.secondary {
+    background-color: variables.color("secondary");
+    &:hover {
+        background-color: scale-color(variables.color("secondary"), $lightness: -25%);
+    }
+}
+
+.accent {
+    background-color: variables.color("accent");
+    &:hover {
+        background-color: scale-color(variables.color("accent"), $lightness: -25%);
+    }
+}
