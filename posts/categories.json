@@ -8,22 +8,22 @@
     {
         "name": "Hobby",
         "slug": "hobby",
-        "items": ["second-item.md"]
+        "items": ["second-item.md", "third-item.md"]
     },
     {
         "name": "Design",
         "slug": "design",
-        "items": ["second-item.md"],
+        "items": ["second-item.md", "first-item.md"],
         "featured": true
     },
     {
         "name": "Drawing",
         "slug": "drawing",
-        "items": ["second-item.md"]
+        "items": ["second-item.md", "fourth-item.md"]
     },
     {
         "name": "Music",
         "slug": "music",
-        "items": ["second-item.md"]
+        "items": ["second-item.md", "first-item.md", "fourth-item.md", "third-item.md"]
     }
 ]
