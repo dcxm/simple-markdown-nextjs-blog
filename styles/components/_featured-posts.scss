@@ -1,0 +1,18 @@
+.featured-posts {
+    margin: #{spacing("sections")} 0;
+    .posts {
+        & :first-child {
+            margin-top: 0 !important;
+        }
+    }
+    @include mediaQuery(breakpoint("tablet")) {
+        .posts {
+            & :first-child+.post-box-container {
+                margin-top: 0 !important;
+            }
+            .post-box-container {
+                margin: 1em 0;
+            }
+        }
+    }
+}

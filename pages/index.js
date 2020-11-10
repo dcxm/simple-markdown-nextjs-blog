@@ -18,9 +18,9 @@ export default function Home({ categories, posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href={`/posts/${posts[0].data.slug}`}><a>
-        <Card dir="vertical" badge badgeText="New!" image={posts[0].data.thumbnail}>
-          <h2 className="card-title">{posts[0].data.title}</h2>
-          <p className="card-text">{posts[0].data.description}</p>
+        <Card badge badgeText="New!" image={posts[0].data.thumbnail}>
+          <h2 className="featured-card-title">{posts[0].data.title}</h2>
+          <p className="featured-card-text">{posts[0].data.description}</p>
         </Card>
       </a></Link>
       <div className="categories">
@@ -36,8 +36,10 @@ export default function Home({ categories, posts }) {
         </div>
       </div>
       <RecentPosts posts={posts} />
-      <h2 className="featured-posts-title">Featured posts</h2>
-      <PostList posts={posts.filter(post => post.data.featured)} />
+      <div className="featured-posts">
+        <h2>Featured posts</h2>
+        <PostList posts={posts.filter(post => post.data.featured)} />
+      </div>
     </>
   )
 }

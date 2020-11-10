@@ -1,0 +1,29 @@
+.button {
+    padding: 1em 1.2em;
+    border-radius: size("border-radius", "button");
+    background-color: color("primary");
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s;
+    @include button-hover("primary");
+    @include button-focus("primary");
+}
+
+button {
+    @extend .button;
+}
+
+.secondary {
+    background-color: color("secondary");
+    @include button-hover("secondary");
+    @include button-focus("secondary");
+}
+
+.accent {
+    background-color: color("accent");
+    @include button-hover("accent");
+    @include button-focus("accent");
+}

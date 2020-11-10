@@ -1,12 +1,12 @@
 export default function Card({ style, children, badge, badgeText, image }) {
     return (
-        <div className={`card main-card`} style={{...style}}>
-            <div className="card-thumbnail" style={{ backgroundImage: `url('${image}')` }}>
-                {badge && <div className="card-badge">
+        <div className="featured-card" style={{...style}}>
+            <div className="featured-card-thumbnail" style={{ backgroundImage: `url('${image}')` }}>
+                {badge && <div className="featured-card-badge">
                     {badgeText}
                 </div>}
             </div>
-            <div className="card-content">
+            <div className="featured-card-content">
                 {children}
             </div>
         </div>

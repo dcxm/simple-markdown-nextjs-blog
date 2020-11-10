@@ -1,0 +1,21 @@
+@mixin button-pseudo($selector) {
+    &:#{$selector} {
+        @content;
+    }
+}
+
+
+@mixin button-hover($color) {
+    @include button-pseudo("hover") {
+        background-color: scale-color(color($color), $lightness: -25%);
+        @content;
+    }
+}
+
+@mixin button-focus($color) {
+    @include button-pseudo("focus") {
+        outline: none;
+        border: size("focus-border", "button") solid scale-color(color($color), $lightness: 50%);
+        @content;
+    }
+}

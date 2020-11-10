@@ -55,6 +55,8 @@ function getPosts() {
             ...post
         })
     })
-    fs.writeFile(postDataPath, JSON.stringify(result), (err) => console.log(err))
-    return 'non'
+    fs.writeFile(postDataPath, JSON.stringify(result), (err) => {
+        if (err) console.log(err)
+        else console.log('Post data have been created')
+    })
 })()

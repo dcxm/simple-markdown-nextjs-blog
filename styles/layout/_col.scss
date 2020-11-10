@@ -1,0 +1,15 @@
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: calc(100% / 12 * #{$i});
+    }
+    .col-s-#{$i} {
+        @media (max-width: #{breakpoint("mobile")}) {
+            width: calc(100% / 12 * #{$i});
+        }
+    }
+    .col-md-#{$i} {
+        @media (min-width: #{breakpoint("tablet")}) {
+            width: calc(100% / 12 * #{$i});
+        }
+    }
+}

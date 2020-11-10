@@ -1,4 +1,4 @@
-import '../styles/index.scss'
+import '../styles/main.scss'
 import '../components/Layout'
 import Layout from '../components/Layout'
 

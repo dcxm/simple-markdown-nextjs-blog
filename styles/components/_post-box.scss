@@ -1,12 +1,9 @@
-@use "./variables";
-@use "./mixins/media";
-
 .post-box-container {
     margin: 1.5em 0;
 }
 
 .flex-container .post-box-container{
-    @include media.mediaQuery(variables.breakpoint("tablet")) {
+    @include mediaQuery(breakpoint("tablet")) {
         padding: 0 1em;
         &:nth-child(odd) {
             padding-left: 0;
@@ -14,7 +11,6 @@
         &:nth-child(even) {
             padding-right: 0;
         }
-
     }
 }
 
@@ -22,20 +18,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: .7em;
+    margin-bottom: 0.7em;
     .post-box-title {
-        color: variables.color("secondary");
+        color: color("secondary");
         font-size: 1.35em;
         margin: 0;
-        @include media.mediaQuery(variables.breakpoint("mobile"), max-width) {
-            margin-bottom: .2em;
+        @include mediaQuery(breakpoint("mobile"), max-width) {
+            margin-bottom: 0.2em;
         }
     }
     .post-box-date {
         font-weight: bold;
         color: gray;
     }
-    @include media.mediaQuery(variables.breakpoint("mobile"), max-width) {
+    @include mediaQuery(breakpoint("mobile"), max-width) {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;

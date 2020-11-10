@@ -1,0 +1,18 @@
+.search-input-container {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    @include mediaQuery(breakpoint("tablet"), max-width) {
+        flex-direction: column;
+    }
+}
+
+.search-input {
+    display: block;
+    width: 80%;
+    margin-right: 1em;
+    @include mediaQuery(breakpoint("tablet"), max-width) {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+}

@@ -1,0 +1,11 @@
+.flex-container {
+    display: flex;
+    width: 100%;
+    @include mediaQuery(breakpoint("mobile"), max-width) {
+        flex-wrap: wrap;
+    }
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}

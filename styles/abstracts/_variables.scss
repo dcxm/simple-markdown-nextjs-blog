@@ -1,0 +1,37 @@
+$breakpoints: (
+    "mobile": 550px,
+    "tablet": 768px,
+    "desktop-small": 1136px,
+    "desktop-medium": 1660px,
+    "desktop-large": 1920px,
+    "desktop-huge": 2560px
+);
+
+$colors: (
+    "primary": #00beab,
+    "secondary": #007ec7,
+    "accent": #8d00b8
+);
+
+$font-sizes: (
+    "h1": 2.5,
+    "h2": 2em,
+    "h3": 1.5em,
+    "card-title": 2em
+);
+
+$sizes: (
+    "border-radius": (
+        "button": 0.5em,
+        "featured-card": 0.5em
+    ),
+    "focus-border": (
+        "button": 3px
+    )
+);
+
+$spacings: (
+    "headers": 1em 0 0.7em,
+    "sections": 3em
+);
+

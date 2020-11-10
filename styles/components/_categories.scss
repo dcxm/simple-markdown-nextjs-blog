@@ -1,0 +1,21 @@
+.categories {
+    margin: 3em 0;
+}
+
+.category-link {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    background-color: color("secondary");
+    padding: 0.4em 0.8em;
+    margin-right: 0.5em;
+    margin-bottom: 0.7em;
+    border-radius: size("border-radius", "button");
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    @include button-focus("secondary")
+}

@@ -1,0 +1,26 @@
+.recent-posts {
+    margin: #{spacing("sections")} 0;
+    .post-item {
+        margin: 0 0.7em;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        @include mediaQuery(breakpoint("mobile"), max-width) {
+            &:first-child {
+                margin-top: 0;
+            }
+            margin: 0.7em 0;
+        }
+    }
+    .post-items {
+        margin-bottom: 2em;
+    }
+    .button {
+        display: block;
+        width: 10em;
+        margin: 0 auto;
+    }
+}

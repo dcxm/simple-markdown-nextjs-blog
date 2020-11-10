@@ -1,0 +1,13 @@
+input {
+    font-size: 1em;
+    padding: 1em;
+    border: 2px solid #{color("secondary")};
+    border-radius: 0.5em;
+    outline: none;
+    transition: all 0.15s;
+    &:focus {
+        background-color: rgb(233, 233, 233);
+    }
+}
+
+
