@@ -1,15 +1,15 @@
-@for $i from 1 through 12 {
-    .col-#{$i} {
-        width: calc(100% / 12 * #{$i});
+$col-sizes: "s", "md", "lg";
+$col-breakpoints: "mobile", "tablet", "desktop-small";
+
+@for $col-index from 1 through 12 {
+    .col-#{$col-index} {
+        width: calc(100% / 12 * #{$col-index});
     }
-    .col-s-#{$i} {
-        @media (max-width: #{breakpoint("mobile")}) {
-            width: calc(100% / 12 * #{$i});
-        }
-    }
-    .col-md-#{$i} {
-        @media (min-width: #{breakpoint("tablet")}) {
-            width: calc(100% / 12 * #{$i});
+    @for $col-size-index from 1 through length($col-sizes) {
+        .col-#{nth($col-sizes, $col-size-index)}-#{$col-index} {
+            @include mediaQuery(breakpoint(nth($col-breakpoints, $col-size-index))) {
+                width: calc(100% / 12 * #{$col-index});
+            }
         }
     }
 }
