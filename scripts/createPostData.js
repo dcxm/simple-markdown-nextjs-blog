@@ -6,7 +6,7 @@ const recommended = require('remark-preset-lint-recommended')
 const html = require('remark-html')
 const matter = require('gray-matter')
 
- function makeHTMLFromMD(markdown, cb) {
+function makeHTMLFromMD(markdown, cb) {
     remark()
         .use(recommended)
         .use(html)
@@ -45,8 +45,15 @@ function getPosts() {
     return sortedPosts
 }
 
-(function() {
-    const postDataPath = path.join(process.cwd(), 'public', 'data', 'postData.json')
+function createPostData(postDataPath, fileContents) {
+    fs.writeFile(postDataPath, JSON.stringify(fileContents), (err) => {
+        if (err) return console.log(err)
+    })
+}
+
+(function () {
+    const dataDirPath = path.join(process.cwd(), 'public', 'data')
+    const postDataPath = path.join(dataDirPath, 'postData.json')
     const posts = getPosts()
     const result = []
     posts.map(post => {
@@ -55,8 +62,14 @@ function getPosts() {
             ...post
         })
     })
-    fs.writeFile(postDataPath, JSON.stringify(result), (err) => {
-        if (err) console.log(err)
-        else console.log('Post data have been created')
+    fs.access(dataDirPath, fs.constants.R_OK, (err) => {
+        if (err) {
+            console.log('Creating /public/data folder...')
+            fs.mkdir(dataDirPath, (err) => {
+                if (err) return console.log(err)
+                createPostData(postDataPath, result)
+            })
+        } else createPostData(postDataPath, result)
     })
+    return console.log('Post data have been created')
 })()

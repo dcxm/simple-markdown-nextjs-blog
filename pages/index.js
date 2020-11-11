@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
-import Card from '../components/Card'
 import fs from 'fs'
 import path from 'path'
 import getPosts from '../lib/getItems'
 
+import Link from '../components/Link'
+import FeaturedCard from '../components/FeaturedCard'
 import RecentPosts from '../components/RecentPosts'
 import PostList from '../components/PostList'
 
@@ -17,21 +17,21 @@ export default function Home({ categories, posts }) {
         <title>My Blog |</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Link href={`/posts/${posts[0].data.slug}`}><a>
-        <Card badge badgeText="New!" image={posts[0].data.thumbnail}>
+      <Link href={`/posts/${posts[0].data.slug}`}>
+        <FeaturedCard badge badgeText="New!" image={posts[0].data.thumbnail}>
           <h2 className="featured-card-title">{posts[0].data.title}</h2>
           <p className="featured-card-text">{posts[0].data.description}</p>
-        </Card>
-      </a></Link>
+        </FeaturedCard>
+      </Link>
       <div className="categories">
         <h2>Categories</h2>
         <div>
           {categories.map(category =>
-            <Link href={`/posts/categories/${category.slug}`} key={category.slug}><a className="category-link">
+            <Link href={`/posts/categories/${category.slug}`} className="category-link" key={category.slug}>
               <span key={category.name}>
                 {category.name}
               </span>
-            </a></Link>
+            </Link>
           )}
         </div>
       </div>
