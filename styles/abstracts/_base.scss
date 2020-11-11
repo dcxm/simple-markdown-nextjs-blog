@@ -1,4 +1,5 @@
 @import "./variables";
 @import "./functions";
 @import "./mixins/button";
-@import "./mixins/media";
+@import "./mixins/media-query";
+@import "./mixins/print-media-queries-by-breakpoint";

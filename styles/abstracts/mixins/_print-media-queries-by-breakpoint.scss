@@ -1,0 +1,7 @@
+@mixin print-media-queries-by-breakpoint($breakpoints, $min-max-width: min-width) {
+    @for $breakpoint-index from 1 through length($breakpoints) {
+        @include mediaQuery(breakpoint(nth($breakpoints, $breakpoint-index)), $min-max-width) {
+            @content($breakpoint-index);
+        }
+    }
+}
