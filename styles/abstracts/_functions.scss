@@ -1,19 +1,20 @@
 @use "sass:map";
+@use "./variables";
 
 @function color($name) {
-    @return map.get($colors, $name)
+    @return map.get(variables.$colors, $name)
 };
 
 @function breakpoint($name) {
-    @return map.get($breakpoints, $name)
+    @return map.get(variables.$breakpoints, $name)
 };
 
 @function spacing($name) {
-    @return map.get($spacings, $name)
+    @return map.get(variables.$spacings, $name)
 };
 
 @function font-size($name) {
-    @return map.get($font-sizes, $name)
+    @return map.get(variables.$font-sizes, $name)
 };
 
 @function map-deep-get($map, $keys...) {
@@ -24,5 +25,5 @@
 };
 
 @function size($keys...) {
-    @return map-deep-get($sizes, $keys...);
+    @return map-deep-get(variables.$sizes, $keys...);
 }

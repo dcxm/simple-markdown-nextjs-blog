@@ -1,10 +1,14 @@
+$container-breakpoints: "tablet",
+"desktop-small";
+$widths: 80%,
+60%;
+
+;
 .container {
     width: 90%;
     margin: auto;
-    @include mediaQuery (breakpoint("tablet")) {
-        width: 80%;
-    };
-    @include mediaQuery (breakpoint("desktop-small")) {
-        width: 60%;
-    };
+    @include print-media-queries-by-breakpoint($container-breakpoints) using ($breakpoint-index) {
+        width: nth($widths, $breakpoint-index);
+    }
+    ;
 }

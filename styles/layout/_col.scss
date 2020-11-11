@@ -1,24 +1,32 @@
-$col-sizes: "s",
+$number-of-columns: 12;
+
+$col-breakpoints: "s",
 "md",
 "lg";
-$col-breakpoints: "mobile",
+
+$query-breakpoint-names: "mobile",
 "tablet",
 "desktop-small";
-@for $col-index from 1 through 12 {
+
+@function calculate-column-width($number-of-columns, $col-index) {
+    @return calc(100% / #{$number-of-columns} * #{$col-index});
+}
+
+@for $col-index from 1 through $number-of-columns {
     .col-#{$col-index} {
-        width: calc(100% / 12 * #{$col-index});
+        width: calculate-column-width($number-of-columns, $col-index);
     }
-    @for $col-size-index from 1 through length($col-sizes) {
+    @for $col-breakpoint-index from 1 through length($col-breakpoints) {
         $width: min-width;
-        @if nth($col-sizes, $col-size-index)=="s" {
+        @if nth($col-breakpoints, $col-breakpoint-index)=="s" {
             $width: max-width;
         }
         @else {
             $width: min-width;
         }
-        .col-#{nth($col-sizes, $col-size-index)}-#{$col-index} {
-            @include mediaQuery(breakpoint(nth($col-breakpoints, $col-size-index)), $width) {
-                width: calc(100% / 12 * #{$col-index});
+        .col-#{nth($col-breakpoints, $col-breakpoint-index)}-#{$col-index} {
+            @include mediaQuery(breakpoint(nth($query-breakpoint-names, $col-breakpoint-index)), $width) {
+                width: calculate-column-width($number-of-columns, $col-index);
             }
         }
     }
