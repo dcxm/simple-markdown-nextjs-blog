@@ -14,7 +14,7 @@ export default function Home({ categories, posts }) {
     <>
       <Head>
         <meta name="description" content="Meta desc" />
-        <title>My Blog | The best blog ever</title>
+        <title>My Blog |</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href={`/posts/${posts[0].data.slug}`}><a>
