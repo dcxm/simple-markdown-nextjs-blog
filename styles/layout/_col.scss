@@ -1,13 +1,23 @@
-$col-sizes: "s", "md", "lg";
-$col-breakpoints: "mobile", "tablet", "desktop-small";
-
+$col-sizes: "s",
+"md",
+"lg";
+$col-breakpoints: "mobile",
+"tablet",
+"desktop-small";
 @for $col-index from 1 through 12 {
     .col-#{$col-index} {
         width: calc(100% / 12 * #{$col-index});
     }
     @for $col-size-index from 1 through length($col-sizes) {
+        $width: min-width;
+        @if nth($col-sizes, $col-size-index)=="s" {
+            $width: max-width;
+        }
+        @else {
+            $width: min-width;
+        }
         .col-#{nth($col-sizes, $col-size-index)}-#{$col-index} {
-            @include mediaQuery(breakpoint(nth($col-breakpoints, $col-size-index))) {
+            @include mediaQuery(breakpoint(nth($col-breakpoints, $col-size-index)), $width) {
                 width: calc(100% / 12 * #{$col-index});
             }
         }
